@@ -1,0 +1,6 @@
+.col-xs-12.col-md-4
+  %div{:class => "card card-#{cycle('male', 'female')}"}
+    / = image_tag user.try(:image_url)
+    .card-block
+      %h4.card-title= user.try(:name)
+      %a.btn.btn-primary{:href => "#"} Button

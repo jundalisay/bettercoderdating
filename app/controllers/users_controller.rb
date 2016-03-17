@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
 	def create
-		@user = User.create user_params
+		@user = User.create (user_params)
 		
 		if @user.persisted?
 			flash[:success] = 'Registered!'
@@ -19,5 +19,13 @@ class UsersController < ApplicationController
 			render 'new'
 		end
 	end
+
+
+
+  private
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :image_url)
+    end
 
 end

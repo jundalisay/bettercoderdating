@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get 'welcome/index'
 
   resources :users
+  resources :sessions
     # get 'users#new'
 end
